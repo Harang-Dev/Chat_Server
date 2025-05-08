@@ -13,18 +13,18 @@ const io = new Server(server, {
   });
 
   io.on("connection", (socket) => {
-    console.log("🔥 A user connected");
+    console.log("연결되었습니다.");
   
     socket.on("chat message", (msg) => {
-      console.log("Message: ", msg);
-      io.emit("chat message", msg);
+      console.log("메세지 : ", msg);
+      io.emit("메세지", msg);
     });
   
     socket.on("disconnect", () => {
-      console.log("User disconnected");
+      console.log("연결이 끊어졌습니다.");
     });
   });
 
   server.listen(3001, () => {
-    console.log("✅ Server running on http://localhost:3001");
+    console.log("3001번 포트에서 연결되었습니다.");
   });
